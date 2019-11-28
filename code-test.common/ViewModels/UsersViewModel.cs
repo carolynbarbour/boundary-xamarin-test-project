@@ -1,32 +1,66 @@
+using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using code_test.common.Models;
 using code_test.common.Services;
-using MvvmCross;
+using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 
 namespace code_test.common.ViewModels
 {
     public class UsersViewModel : BaseViewModel
     {
-        public ObservableCollection<User> Users { get; set; }
+        private MvxObservableCollection<User> _users;
 
         public UsersViewModel(IUsersService usersService) : base(usersService)
         {
-            System.Diagnostics.Debug.WriteLine("CTor...");
-            
-            Users = new ObservableCollection<User>
-            {
-                new User(1, "Peter", "Lockett", "peter@boundary.co.uk"),
-                new User(2, "Paul", "Walton", "paul@boundary.co.uk")
-            };
+            UserSelectedCommand = new MvxAsyncCommand<User>(OnUserSelected);
         }
 
-        public override void Prepare()
+        public MvxObservableCollection<User> Users
         {
-            base.Prepare();
+            get => _users;
+            set
+            {
+                _users = value;
+                RaisePropertyChanged(() => Users);
+            }
+        }
+        
+        public IMvxCommand<User> UserSelectedCommand { get; }
+        
+        public override async Task Initialize()
+        {
+            var usersCollection = new MvxObservableCollection<User>();
             
-            System.Diagnostics.Debug.WriteLine("Preparing...");
+            try
+            {
+                var result = await UsersService.GetAllUsers();
+
+                usersCollection = new MvxObservableCollection<User>(result);
+            }
+            catch (Exception exception)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception retrieving users");
+                System.Diagnostics.Debug.WriteLine(exception.StackTrace);
+                throw;
+            }
+
+            Users = usersCollection;
+        }
+
+        private async Task OnUserSelected(User selectedUser)
+        {
+            var result = await NavigationService.Navigate<SingleViewUserViewModel, User>(selectedUser);
+
+            if (!result)
+            {
+                System.Diagnostics.Debug.WriteLine("Error occured");
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("Worked just fine.");
+            }
         }
     }
 }

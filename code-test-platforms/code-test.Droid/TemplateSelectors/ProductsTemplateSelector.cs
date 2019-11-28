@@ -5,13 +5,13 @@ using MvvmCross.Droid.Support.V7.RecyclerView.ItemTemplates;
 
 namespace code_test.Droid.TemplateSelectors
 {
-    public class UsersTemplateSelector : IMvxTemplateSelector
+    public class ProductsTemplateSelector : IMvxTemplateSelector
     {
         public int ItemTemplateId { get; set; }
         
         private readonly Dictionary<Type, int> _typeDictionary = new Dictionary<Type, int>
         {
-            [typeof(User)] = Resource.Layout.users_item
+            [typeof(Product)] = Resource.Layout.product_item
         };
         
         public int GetItemViewType(object forItemObject)

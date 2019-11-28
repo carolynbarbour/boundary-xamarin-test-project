@@ -17,7 +17,6 @@ namespace code_test.Droid.Views
         protected abstract int FragmentId { get; }
         
         public MvxAppCompatActivity ParentActivity => (MvxAppCompatActivity) Activity;
-        
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -38,16 +37,35 @@ namespace code_test.Droid.Views
                 );
                 
                 _drawerToggle.DrawerOpened += OnDrawerToggleOnDrawerOpened;
+                
+                ((MainView)ParentActivity).DrawerLayout.AddDrawerListener(_drawerToggle);
             }
 
             return view;
 
         }
 
+        public override void OnConfigurationChanged(Configuration newConfig)
+        {
+            base.OnConfigurationChanged(newConfig);
+            if (_toolbar != null)
+            {
+                _drawerToggle.OnConfigurationChanged(newConfig);
+            }
+        }
+
+        public override void OnActivityCreated(Bundle savedInstanceState)
+        {
+            base.OnActivityCreated(savedInstanceState);
+            if (_toolbar != null)
+            {
+                _drawerToggle.SyncState();
+            }
+        }
+        
         private void OnDrawerToggleOnDrawerOpened(object sender, ActionBarDrawerEventArgs e)
         {
             ((MainView) Activity)?.HideSoftKeyboard();
-            ((MainView) ParentActivity).DrawerLayout.AddDrawerListener(_drawerToggle);
         }
     }
 

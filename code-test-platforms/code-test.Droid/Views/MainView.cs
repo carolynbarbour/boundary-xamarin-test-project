@@ -1,7 +1,9 @@
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Android.Support.V4.View;
 using Android.Support.V4.Widget;
+using Android.Views;
 using Android.Views.InputMethods;
 using code_test.common.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat;
@@ -25,7 +27,33 @@ namespace code_test.Droid.Views
 
             if (bundle == null)
             {
-                System.Diagnostics.Debug.WriteLine("Null Bundle");
+                System.Diagnostics.Debug.WriteLine("MainView, no previous bundle set, showing default...");
+                ViewModel.ShowUsersViewModelCommand.Execute(null);
+                ViewModel.ShowMenuViewModelCommand.Execute(null);
+            }
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    DrawerLayout.OpenDrawer(GravityCompat.Start);
+                    return true;
+            }
+
+            return base.OnOptionsItemSelected(item);
+        }
+
+        public override void OnBackPressed()
+        {
+            if (DrawerLayout != null && DrawerLayout.IsDrawerOpen(GravityCompat.Start))
+            {
+                DrawerLayout.CloseDrawers();
+            }
+            else
+            {
+                base.OnBackPressed();
             }
         }
 

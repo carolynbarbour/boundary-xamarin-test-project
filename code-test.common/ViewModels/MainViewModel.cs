@@ -1,17 +1,27 @@
-using code_test.common.Services;
-using MvvmCross;
-using MvvmCross.IoC;
-using MvvmCross.Navigation;
+using System.Threading.Tasks;
+using MvvmCross.Commands;
 
 namespace code_test.common.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
-        public MainViewModel(IUsersService usersService) : base(usersService)
+        public MainViewModel()
         {
-            var navService = Mvx.IoCProvider.Resolve<IMvxNavigationService>();
+            ShowUsersViewModelCommand = new MvxAsyncCommand(OnShowUsersViewModelCommandExecute);
+            ShowMenuViewModelCommand = new MvxAsyncCommand(OnShowMenuViewModelCommandExecute);
+        }
+        
+        public IMvxAsyncCommand ShowUsersViewModelCommand { get; }
+        public IMvxAsyncCommand ShowMenuViewModelCommand { get; }
 
-            navService.Navigate<UsersViewModel>();
+        private async Task OnShowUsersViewModelCommandExecute()
+        {
+            await NavigationService.Navigate<UsersViewModel>();
+        }
+        
+        private async Task OnShowMenuViewModelCommandExecute()
+        {
+            await NavigationService.Navigate<MenuViewModel>();
         }
     }
 }
