@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:local="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
@@ -17,14 +17,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 local:layout_behavior="@string/appbar_scrolling_view_behavior">
-            <MvxRecyclerView
+            <MvvmCross.DroidX.RecyclerView.MvxRecyclerView
                     android:id="@+id/users_recycler_view"
                     android:scrollbars="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     local:MvxItemTemplate="@layout/users_item"
-                    local:MvxTemplateSelector="code_test.Droid.TemplateSelectors.UsersTemplateSelector,code_test.Droid"
                     local:MvxBind="ItemsSource Users; ItemClick UserSelectedCommand" />
         </RelativeLayout>
     </RelativeLayout>
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -2,13 +2,12 @@ using System;
 using System.Threading.Tasks;
 using Android.OS;
 using Android.Runtime;
-using Android.Support.Design.Widget;
-using Android.Support.Graphics.Drawable;
 using Android.Views;
-using MvvmCross.Droid.Support.V4;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using code_test.common.ViewModels;
+using MvvmCross.Platforms.Android.Views.Fragments;
+using Google.Android.Material.Navigation;
 
 namespace code_test.Droid.Views
 {

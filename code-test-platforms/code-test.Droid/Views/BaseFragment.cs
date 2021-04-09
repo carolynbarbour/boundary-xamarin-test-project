@@ -1,11 +1,12 @@
 using Android.Content.Res;
 using Android.OS;
-using Android.Support.V7.Widget;
 using Android.Views;
-using MvvmCross.Droid.Support.V4;
-using MvvmCross.Droid.Support.V7.AppCompat;
-using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.ViewModels;
+using MvvmCross.Platforms.Android.Views.Fragments;
+using MvvmCross.Platforms.Android.Views.AppCompat;
+using MvvmCross.Platforms.Android.Views;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using AndroidX.AppCompat.Widget;
 
 namespace code_test.Droid.Views
 {
@@ -16,7 +17,7 @@ namespace code_test.Droid.Views
 
         protected abstract int FragmentId { get; }
         
-        public MvxAppCompatActivity ParentActivity => (MvxAppCompatActivity) Activity;
+        public MvxActivity ParentActivity => (MvxActivity) Activity;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -65,7 +66,7 @@ namespace code_test.Droid.Views
         
         private void OnDrawerToggleOnDrawerOpened(object sender, ActionBarDrawerEventArgs e)
         {
-            ((MainView) Activity)?.HideSoftKeyboard();
+            ((MainView)Activity)?.HideSoftKeyboard();
         }
     }
 

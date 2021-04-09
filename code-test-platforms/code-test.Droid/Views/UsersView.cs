@@ -1,10 +1,9 @@
 using Android.OS;
 using Android.Runtime;
-using Android.Support.V7.Widget;
 using Android.Views;
-using Android.Widget;
+using AndroidX.RecyclerView.Widget;
 using code_test.common.ViewModels;
-using MvvmCross.Droid.Support.V7.RecyclerView;
+using MvvmCross.DroidX.RecyclerView;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 
 namespace code_test.Droid.Views

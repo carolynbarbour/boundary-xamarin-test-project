@@ -14,9 +14,7 @@ namespace code_test.common.ViewModels
         }
         
         public IMvxAsyncCommand ShowUsersCommand { get; }
-        
         public IMvxAsyncCommand ShowProductsCommand { get; }
-        
         public IMvxAsyncCommand ShowPurchasesCommand { get; }
 
         private async Task OnShowUsersCommandExecute()

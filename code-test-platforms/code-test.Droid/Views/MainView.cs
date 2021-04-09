@@ -1,19 +1,19 @@
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using Android.Support.V4.View;
-using Android.Support.V4.Widget;
 using Android.Views;
 using Android.Views.InputMethods;
+using AndroidX.Core.View;
+using AndroidX.DrawerLayout.Widget;
 using code_test.common.ViewModels;
-using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
+using MvvmCross.Platforms.Android.Views;
 
 namespace code_test.Droid.Views
 {
     [MvxActivityPresentation]
     [Activity(Label = "Code Test", Theme = "@style/AppTheme", LaunchMode = LaunchMode.SingleTop, Name = "code_test.droid.view.MainView")]
-    public class MainView : MvxAppCompatActivity<MainViewModel>
+    public class MainView : MvxActivity<MainViewModel>
     {
         public DrawerLayout DrawerLayout { get; set; }
 

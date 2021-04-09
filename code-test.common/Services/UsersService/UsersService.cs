@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using code_test.common.Models;
 using code_test.common.Services.Results;
@@ -19,7 +18,7 @@ namespace code_test.common.Services
         {
             var request = new RestRequest($"{ApiBase}", Method.GET);
 
-            var response = await Client.ExecuteTaskAsync(request);
+            var response = await Client.ExecuteAsync(request);
 
             // Response comes back as key valued array, use a class to assist in deserialization
             var content = JsonConvert.DeserializeObject<GetAllUsersResult>(response.Content);

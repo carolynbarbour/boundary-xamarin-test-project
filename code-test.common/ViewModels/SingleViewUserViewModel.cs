@@ -1,4 +1,3 @@
-using System;
 using code_test.common.Models;
 using code_test.common.Services;
 

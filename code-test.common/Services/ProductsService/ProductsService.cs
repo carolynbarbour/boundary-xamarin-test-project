@@ -18,7 +18,7 @@ namespace code_test.common.Services.ProductsService
         {
             var request = new RestRequest($"{ApiBase}", Method.GET);
 
-            var response = await Client.ExecuteTaskAsync(request);
+            var response = await Client.ExecuteAsync(request);
 
             // Response comes back as key valued array, use a class to assist in deserialization
             var content = JsonConvert.DeserializeObject<GetAllProductsResult>(response.Content);

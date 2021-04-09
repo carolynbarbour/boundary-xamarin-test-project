@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Threading.Tasks;
-using code_test.common.Models;
 using code_test.common.Services;
 using NUnit.Framework;
 
