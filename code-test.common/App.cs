@@ -1,5 +1,4 @@
-﻿using System;
-using MvvmCross.IoC;
+﻿using MvvmCross.IoC;
 using MvvmCross.ViewModels;
 
 namespace code_test.common
@@ -13,7 +12,7 @@ namespace code_test.common
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
             
-            RegisterCustomAppStart<CustomAppStart>();
+            RegisterAppStart<ViewModels.MainViewModel>();
         }
     }
 }
