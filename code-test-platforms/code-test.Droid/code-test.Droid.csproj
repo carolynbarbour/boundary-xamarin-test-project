@@ -58,6 +58,8 @@
     <Compile Include="Views\ProductsView.cs" />
     <Compile Include="Views\SingleUserView.cs" />
     <Compile Include="Views\UsersView.cs" />
+    <Compile Include="Views\LoginView.cs" />
+    <Compile Include="Views\SignUpView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -99,6 +101,14 @@
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\layout\LoginView.axml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\SignUpView.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\code-test.common\code-test.common.csproj">

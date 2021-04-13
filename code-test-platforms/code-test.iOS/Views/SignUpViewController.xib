@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController">
+            <connections>
+                <outlet property="EmailAddressLabel" destination="wNP-3E-orT" id="zk8-3B-Vdc"/>
+                <outlet property="FirstNameLabel" destination="aq2-8X-nXt" id="3IP-GI-GeH"/>
+                <outlet property="PasswordLabel" destination="5Lb-xv-ArT" id="aPv-c8-yTv"/>
+                <outlet property="SecondNameLabel" destination="qRj-v8-1zt" id="awI-6r-dJ5"/>
+                <outlet property="SignUpButton" destination="A4a-Ee-WMR" id="gtj-69-tlI"/>
+                <outlet property="UsernameLabel" destination="kxl-LV-0Ab" id="dDG-ad-fgb"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aq2-8X-nXt">
+                    <rect key="frame" x="15" y="59" width="384" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="CY6-HW-hM5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Second Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qRj-v8-1zt">
+                    <rect key="frame" x="15" y="109" width="384" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kxl-LV-0Ab">
+                    <rect key="frame" x="15" y="159" width="384" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wNP-3E-orT">
+                    <rect key="frame" x="15" y="209" width="384" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Lb-xv-ArT">
+                    <rect key="frame" x="15" y="259" width="384" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4a-Ee-WMR">
+                    <rect key="frame" x="15" y="339" width="384" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="t7w-0T-cGK"/>
+                    </constraints>
+                    <state key="normal" title="Sign Up"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="OC2-XF-OK0"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="A4a-Ee-WMR" firstAttribute="trailing" secondItem="5Lb-xv-ArT" secondAttribute="trailing" id="4c7-M2-HZb"/>
+                <constraint firstItem="wNP-3E-orT" firstAttribute="leading" secondItem="kxl-LV-0Ab" secondAttribute="leading" id="4zS-wj-oPG"/>
+                <constraint firstItem="5Lb-xv-ArT" firstAttribute="trailing" secondItem="wNP-3E-orT" secondAttribute="trailing" id="6Tb-fc-s0K"/>
+                <constraint firstItem="5Lb-xv-ArT" firstAttribute="height" secondItem="wNP-3E-orT" secondAttribute="height" id="CIl-41-4c7"/>
+                <constraint firstItem="A4a-Ee-WMR" firstAttribute="leading" secondItem="5Lb-xv-ArT" secondAttribute="leading" id="IVs-rY-EhF"/>
+                <constraint firstItem="wNP-3E-orT" firstAttribute="bottom" secondItem="5Lb-xv-ArT" secondAttribute="top" constant="-10" id="ML5-0t-hMP"/>
+                <constraint firstItem="aq2-8X-nXt" firstAttribute="top" secondItem="OC2-XF-OK0" secondAttribute="top" constant="15" id="Usb-SW-PEY"/>
+                <constraint firstItem="qRj-v8-1zt" firstAttribute="leading" secondItem="aq2-8X-nXt" secondAttribute="leading" id="Wjg-Zr-Yxy"/>
+                <constraint firstItem="wNP-3E-orT" firstAttribute="height" secondItem="kxl-LV-0Ab" secondAttribute="height" id="ahy-hn-SjJ"/>
+                <constraint firstItem="kxl-LV-0Ab" firstAttribute="bottom" secondItem="wNP-3E-orT" secondAttribute="top" constant="-10" id="ba1-Tc-V3k"/>
+                <constraint firstItem="kxl-LV-0Ab" firstAttribute="height" secondItem="qRj-v8-1zt" secondAttribute="height" id="dBT-R4-URM"/>
+                <constraint firstItem="qRj-v8-1zt" firstAttribute="height" secondItem="aq2-8X-nXt" secondAttribute="height" id="fAi-CC-OQU"/>
+                <constraint firstItem="qRj-v8-1zt" firstAttribute="bottom" secondItem="kxl-LV-0Ab" secondAttribute="top" constant="-10" id="fSu-5f-es2"/>
+                <constraint firstItem="5Lb-xv-ArT" firstAttribute="bottom" secondItem="A4a-Ee-WMR" secondAttribute="top" constant="-40" id="jfB-Tt-z3z"/>
+                <constraint firstItem="OC2-XF-OK0" firstAttribute="trailing" secondItem="aq2-8X-nXt" secondAttribute="trailing" constant="15" id="k6r-qV-eSK"/>
+                <constraint firstItem="kxl-LV-0Ab" firstAttribute="trailing" secondItem="qRj-v8-1zt" secondAttribute="trailing" id="oqu-8h-6Wh"/>
+                <constraint firstItem="5Lb-xv-ArT" firstAttribute="leading" secondItem="wNP-3E-orT" secondAttribute="leading" id="ovr-iC-13v"/>
+                <constraint firstItem="aq2-8X-nXt" firstAttribute="leading" secondItem="OC2-XF-OK0" secondAttribute="leading" constant="15" id="pl4-M6-4Db"/>
+                <constraint firstItem="qRj-v8-1zt" firstAttribute="trailing" secondItem="aq2-8X-nXt" secondAttribute="trailing" id="rlH-jc-zah"/>
+                <constraint firstItem="wNP-3E-orT" firstAttribute="trailing" secondItem="kxl-LV-0Ab" secondAttribute="trailing" id="uHg-FL-fsl"/>
+                <constraint firstItem="aq2-8X-nXt" firstAttribute="bottom" secondItem="qRj-v8-1zt" secondAttribute="top" constant="-10" id="xYd-5A-tc4"/>
+                <constraint firstItem="kxl-LV-0Ab" firstAttribute="leading" secondItem="qRj-v8-1zt" secondAttribute="leading" id="yzC-XQ-SJL"/>
+            </constraints>
+            <point key="canvasLocation" x="19" y="3"/>
+        </view>
+    </objects>
+</document>

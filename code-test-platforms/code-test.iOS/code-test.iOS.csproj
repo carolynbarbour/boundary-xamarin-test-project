@@ -132,6 +132,8 @@
         <InterfaceDefinition Include="Views\UsersViewController.xib" />
         <InterfaceDefinition Include="Views\Cells\UserCell.xib" />
         <InterfaceDefinition Include="Views\SingleUserViewController.xib" />
+        <InterfaceDefinition Include="Views\LoginViewController.xib" />
+        <InterfaceDefinition Include="Views\SignUpViewController.xib" />
     </ItemGroup>
     <ItemGroup>
         <None Include="Info.plist" />
@@ -174,6 +176,14 @@
         <Compile Include="Views\SingleUserViewController.cs" />
         <Compile Include="Views\SingleUserViewController.designer.cs">
           <DependentUpon>SingleUserViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Views\LoginViewController.cs" />
+        <Compile Include="Views\LoginViewController.designer.cs">
+          <DependentUpon>LoginViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Views\SignUpViewController.cs" />
+        <Compile Include="Views\SignUpViewController.designer.cs">
+          <DependentUpon>SignUpViewController.cs</DependentUpon>
         </Compile>
     </ItemGroup>
     <ItemGroup>

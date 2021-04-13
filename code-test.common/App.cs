@@ -12,7 +12,7 @@ namespace code_test.common
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
             
-            RegisterAppStart<ViewModels.MainViewModel>();
+            RegisterAppStart<ViewModels.LoginViewModel>();
         }
     }
 }

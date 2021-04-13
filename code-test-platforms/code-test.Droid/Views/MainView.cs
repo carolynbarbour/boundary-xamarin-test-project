@@ -12,7 +12,7 @@ using MvvmCross.Platforms.Android.Views;
 namespace code_test.Droid.Views
 {
     [MvxActivityPresentation]
-    [Activity(Label = "Code Test", Theme = "@style/AppTheme", LaunchMode = LaunchMode.SingleTop, Name = "code_test.droid.view.MainView")]
+    [Activity(Label = "Code Test", Theme = "@style/AppTheme", LaunchMode = LaunchMode.SingleTop, Name = "code_test.droid.views.MainView")]
     public class MainView : MvxActivity<MainViewModel>
     {
         public DrawerLayout DrawerLayout { get; set; }
