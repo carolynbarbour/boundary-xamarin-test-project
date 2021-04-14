@@ -5,9 +5,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="GraphQL.Client" Version="3.2.3" />
+      <PackageReference Include="GraphQL.Client.Serializer.Newtonsoft" Version="3.2.3" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
       <PackageReference Include="RestSharp" Version="106.11.7" />
       <PackageReference Include="MvvmCross" Version="7.1.2" />
+      <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
     </ItemGroup>
 
 </Project>

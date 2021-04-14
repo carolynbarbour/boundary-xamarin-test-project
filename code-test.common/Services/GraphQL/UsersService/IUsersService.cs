@@ -7,7 +7,5 @@ namespace code_test.common.Services
     public interface IUsersService
     {
         Task<IEnumerable<User>> GetAllUsers();
-
-        Task<User> GetById(string userId);
     }
 }

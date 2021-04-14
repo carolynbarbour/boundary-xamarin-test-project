@@ -1,5 +1,8 @@
 ﻿using code_test.common;
+using code_test.common.Services;
+using code_test.iOS.Platform;
 using Foundation;
+using MvvmCross;
 using MvvmCross.Platforms.Ios.Core;
 using MvvmCross.Platforms.Ios.Presenters;
 using MvvmCross.Plugin.Sidebar;
@@ -20,6 +23,7 @@ namespace code_test.iOS
     {
         protected override IMvxIosViewPresenter CreateViewPresenter()
         {
+            Mvx.IoCProvider.RegisterSingleton<ISecureStorageFacade>(new IOSSecureStorageImpl());
             return new MvxSidebarPresenter((MvxApplicationDelegate)ApplicationDelegate, Window);
         }
     }

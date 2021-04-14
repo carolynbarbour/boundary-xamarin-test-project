@@ -1,12 +1,23 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
+using code_test.common.Services;
+using code_test.common.Services.AuthService;
+using MvvmCross;
 using MvvmCross.Commands;
+using Xamarin.Essentials;
 
 namespace code_test.common.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-        public LoginViewModel()
+        private IAuthService _authService;
+        private ISecureStorageFacade _secureStorageFacade;
+        
+        public LoginViewModel(IAuthService authService = null, ISecureStorageFacade secureStorageFacade = null)
         {
+            _authService = authService ?? Mvx.IoCProvider.Resolve<IAuthService>();
+            _secureStorageFacade = secureStorageFacade ?? Mvx.IoCProvider.Resolve<ISecureStorageFacade>();
+            
             LoginCommand = new MvxAsyncCommand(OnLoginCommandExecute);
             SignUpCommand = new MvxAsyncCommand(OnSignUpCommandExecute);
         }
@@ -22,12 +33,20 @@ namespace code_test.common.ViewModels
 
         private async Task OnLoginCommandExecute()
         {
-            //Authenticate 
-            var successful = true;
-
-            if (successful)
+            try
             {
+                // Get AuthToken?
+                var authResponse = await _authService.Login(Username, Password);
+
+                await _secureStorageFacade.SetKeyValue("auth_token", authResponse.AccessToken);
+                
+                
                 await NavigationService.Navigate<MainViewModel>();
+            }
+            catch
+            {
+                System.Diagnostics.Debug.WriteLine("There was a problem logging in!");
+                throw;
             }
         }
 

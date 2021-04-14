@@ -12,7 +12,7 @@ namespace code_test_unit_tests
         [SetUp]
         public void Init()
         {
-            _productsService = new ProductsService("http://localhost:7070");
+            _productsService = new ProductsGraphQlService("http://localhost:7070");
         }
 
         [Test]
