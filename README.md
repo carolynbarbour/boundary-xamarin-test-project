@@ -1,6 +1,6 @@
 # Boundary Xamarin Exercise 
   
-Use this skeleton application to complete your assigned task, it demonstrates a few concepts we use here at boundary and shows off an interaction between a webservice you will write and the data stored in a PostgreSQL database that you will use
+Use this skeleton application to complete your assigned task, it demonstrates a few concepts we use here at boundary and shows off an interaction between a graphql web service.
    
 ## Install the Source  
   
@@ -9,7 +9,6 @@ Use this skeleton application to complete your assigned task, it demonstrates a 
  - Xamarin Build Tools : https://visualstudio.microsoft.com/xamarin/
  - Mono (Should be provided via VS Installer)
  - Android SDK (Should be provided via VS Installer)
- - Boundary PHP Web Service : https://github.com/BoundaryAlarm/Boundary-PHP-Test-Project
 
 ### Running the App
 
@@ -27,3 +26,4 @@ Have fun!
 https://visualstudio.microsoft.com/xamarin/
 https://www.mvvmcross.com/
 https://developer.android.com/docs
+https://graphql.org/
