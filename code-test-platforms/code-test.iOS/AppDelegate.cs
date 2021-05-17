@@ -7,7 +7,7 @@ using MvvmCross.Platforms.Ios.Core;
 using MvvmCross.Platforms.Ios.Presenters;
 using MvvmCross.Plugin.Sidebar;
 using UIKit;
-using InstabugLib;
+//using InstabugLib;
 
 namespace code_test.iOS
 {
@@ -30,9 +30,9 @@ namespace code_test.iOS
         {
             var instabugId = "c801f0d3fcaeba7e6c5de494efd23343";
 
-            Instabug.StartWithToken(instabugId, IBGInvocationEvent.Shake);
-            Instabug.StartWithToken(instabugId, IBGInvocationEvent.FloatingButton);
-            Instabug.StartWithToken(instabugId, IBGInvocationEvent.Shake);
+            //Instabug.StartWithToken(instabugId, IBGInvocationEvent.Shake);
+            //Instabug.StartWithToken(instabugId, IBGInvocationEvent.FloatingButton);
+            //Instabug.StartWithToken(instabugId, IBGInvocationEvent.Shake);
         }
     }
 

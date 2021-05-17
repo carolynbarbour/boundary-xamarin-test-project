@@ -204,9 +204,6 @@
       <PackageReference Include="MvvmCross.Plugin.Sidebar">
         <Version>7.1.2</Version>
       </PackageReference>
-      <PackageReference Include="instabug-for-ios">
-        <Version>10.0.1</Version>
-      </PackageReference>
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\..\code-test.common\code-test.common.csproj">
