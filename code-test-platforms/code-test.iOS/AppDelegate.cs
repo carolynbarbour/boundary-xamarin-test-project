@@ -7,6 +7,7 @@ using MvvmCross.Platforms.Ios.Core;
 using MvvmCross.Platforms.Ios.Presenters;
 using MvvmCross.Plugin.Sidebar;
 using UIKit;
+using InstabugLib;
 
 namespace code_test.iOS
 {
@@ -17,9 +18,25 @@ namespace code_test.iOS
     {
         [Export("window")]
         public UIWindow Window { get; set; }
+
+        public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
+        {
+            InitialiseInstabug();
+
+            return base.FinishedLaunching(application, launchOptions);
+        }
+
+        void InitialiseInstabug()
+        {
+            var instabugId = "c801f0d3fcaeba7e6c5de494efd23343";
+
+            Instabug.StartWithToken(instabugId, IBGInvocationEvent.Shake);
+            Instabug.StartWithToken(instabugId, IBGInvocationEvent.FloatingButton);
+            Instabug.StartWithToken(instabugId, IBGInvocationEvent.Shake);
+        }
     }
 
-    public class Setup: MvxIosSetup<CodeTestApp>
+    public class Setup : MvxIosSetup<CodeTestApp>
     {
         protected override IMvxIosViewPresenter CreateViewPresenter()
         {
